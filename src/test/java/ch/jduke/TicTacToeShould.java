@@ -22,4 +22,21 @@ public class TicTacToeShould {
         // assert
         Assertions.assertEquals(actualPlayer, expectedPlayer);
     }
+
+    @Test
+    @DisplayName("""
+            set 'o' as player when 'x' has marked a field
+            """)
+    public void playerXMarkField() {
+        // arrange
+        var expectedPlayer = "o";
+        var ticTacToe = new TicTacToe();
+
+        // act
+        ticTacToe.mark();
+        var actualPlayer = ticTacToe.getPlayer();
+
+        // assert
+        Assertions.assertEquals(actualPlayer, expectedPlayer);
+    }
 }
