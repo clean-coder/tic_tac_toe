@@ -8,6 +8,10 @@ public class TicTacToe {
     }
 
     public void mark() {
-        actualPlayer = actualPlayer.equals("x") ? "o" : "x";
+        if (actualPlayer.equals("x")) {
+            actualPlayer = "o";
+            return;
+        }
+        actualPlayer = "x";
     }
 }
