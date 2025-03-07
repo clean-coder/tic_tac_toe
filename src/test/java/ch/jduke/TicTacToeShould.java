@@ -14,13 +14,12 @@ public class TicTacToeShould {
     public void newGame() {
         // arrange
         var expectedPlayer = "x";
-        var TicTacToe = new TicTacToe();
+        var ticTacToe = new TicTacToe();
 
         // act
-        var actualPlayer = TicTacToe.getPlayer();
+        var actualPlayer = ticTacToe.getPlayer();
 
         // assert
         Assertions.assertEquals(actualPlayer, expectedPlayer);
-
     }
 }
