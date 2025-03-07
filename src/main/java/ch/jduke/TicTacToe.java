@@ -1,9 +1,11 @@
 package ch.jduke;
 
-public class TicTacToe {
-    private String actualPlayer = "x";
+import java.util.Objects;
 
-    public String getPlayer() {
+public class TicTacToe {
+    private Player actualPlayer = Player.X;
+
+    public Player getPlayer() {
         return actualPlayer;
     }
 
@@ -12,10 +14,10 @@ public class TicTacToe {
     }
 
     private void changePlayer() {
-        if (actualPlayer.equals("x")) {
-            actualPlayer = "o";
+        if (actualPlayer == Player.X) {
+            actualPlayer = Player.O;
             return;
         }
-        actualPlayer = "x";
+        actualPlayer = Player.X;
     }
 }

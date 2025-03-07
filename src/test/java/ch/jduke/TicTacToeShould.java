@@ -21,7 +21,7 @@ public class TicTacToeShould {
             """)
     public void newGame() {
         // arrange
-        var expectedPlayer = "x";
+        var expectedPlayer = Player.X;
 
         // act
         var actualPlayer = ticTacToe.getPlayer();
@@ -36,7 +36,7 @@ public class TicTacToeShould {
             """)
     public void playerXMarkField() {
         // arrange
-        var expectedPlayer = "o";
+        var expectedPlayer = Player.O;
 
         // act
         ticTacToe.mark(Position.TopLeft);
@@ -52,7 +52,7 @@ public class TicTacToeShould {
             """)
     public void checkPlayersAlternate() {
         // arrange
-        var expectedPlayer = "x";
+        var expectedPlayer = Player.X;
 
         // act
         ticTacToe.mark(Position.TopLeft);
