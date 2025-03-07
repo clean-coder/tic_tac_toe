@@ -2,6 +2,7 @@ package ch.jduke;
 
 public class Grid {
     private Player[] grid;
+    private WinningPositions winningPositions = new WinningPositions();
 
     public Grid() {
         grid = new Player[]{
@@ -15,21 +16,10 @@ public class Grid {
     }
 
     public Player getWinner() {
-        if (
-                grid[Position.TopLeft.ordinal()] == grid[Position.MiddleCenter.ordinal()] &&
-                grid[Position.MiddleCenter.ordinal()] == grid[Position.BottomRight.ordinal()] &&
-                grid[Position.TopLeft.ordinal()] != Player.None
-        ) {
-            return grid[Position.TopLeft.ordinal()];
-        }
-        if (
-                grid[Position.TopRight.ordinal()] == grid[Position.MiddleCenter.ordinal()] &&
-                grid[Position.MiddleCenter.ordinal()] == grid[Position.BottomLeft.ordinal()] &&
-                grid[Position.TopRight.ordinal()] != Player.None
-        ) {
-            return grid[Position.TopRight.ordinal()];
-        }
-        return Player.None;
+        return winningPositions.checkWin(makeCopyOfGrid()).player();
+    }
 
+    private Player[] makeCopyOfGrid() {
+        return grid.clone();
     }
 }
