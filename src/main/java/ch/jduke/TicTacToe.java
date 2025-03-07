@@ -1,25 +1,15 @@
 package ch.jduke;
 
-import java.util.Objects;
-
 public class TicTacToe {
     private Player actualPlayer = Player.X;
-    private Player[]  grid;
-
-    public TicTacToe() {
-        grid = new Player[] {
-                Player.None, Player.None, Player.None,
-                Player.None, Player.None, Player.None,
-                Player.None, Player.None, Player.None
-        };
-    }
+    private Grid grid = new Grid();
 
     public Player getPlayer() {
         return actualPlayer;
     }
 
     public void mark(Position position) {
-        grid[position.ordinal()] = actualPlayer;
+        grid.mark(position, actualPlayer);
         changePlayer();
     }
 
@@ -32,20 +22,6 @@ public class TicTacToe {
     }
 
     public Player getWinner() {
-        if (
-                grid[Position.TopLeft.ordinal()] == grid[Position.MiddleCenter.ordinal()] &&
-                grid[Position.MiddleCenter.ordinal()] == grid[Position.BottomRight.ordinal()] &&
-                grid[Position.TopLeft.ordinal()] != Player.None
-        ) {
-            return grid[Position.TopLeft.ordinal()];
-        }
-        if (
-                grid[Position.TopRight.ordinal()] == grid[Position.MiddleCenter.ordinal()] &&
-                grid[Position.MiddleCenter.ordinal()] == grid[Position.BottomLeft.ordinal()] &&
-                grid[Position.TopRight.ordinal()] != Player.None
-        ) {
-            return grid[Position.TopRight.ordinal()];
-        }
-        return Player.None;
+        return grid.getWinner();
     }
 }
