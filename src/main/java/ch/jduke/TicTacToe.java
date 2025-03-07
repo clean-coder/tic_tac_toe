@@ -7,7 +7,7 @@ public class TicTacToe {
         return actualPlayer;
     }
 
-    public void mark() {
+    public void mark(Position position) {
         changePlayer();
     }
 

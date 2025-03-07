@@ -39,7 +39,7 @@ public class TicTacToeShould {
         var expectedPlayer = "o";
 
         // act
-        ticTacToe.mark();
+        ticTacToe.mark(Position.TopLeft);
         var actualPlayer = ticTacToe.getPlayer();
 
         // assert
@@ -55,8 +55,8 @@ public class TicTacToeShould {
         var expectedPlayer = "x";
 
         // act
-        ticTacToe.mark();
-        ticTacToe.mark();
+        ticTacToe.mark(Position.TopLeft);
+        ticTacToe.mark(Position.TopLeft);
         var actualPlayer = ticTacToe.getPlayer();
 
         // assert
