@@ -9,7 +9,8 @@ public class Grid {
                 Player.None, Player.None, Player.None,
                 Player.None, Player.None, Player.None,
                 Player.None, Player.None, Player.None
-        };    }
+        };
+    }
 
     public void mark(Position position, Player actualPlayer) {
         grid[position.ordinal()] = actualPlayer;
