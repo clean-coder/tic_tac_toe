@@ -74,9 +74,9 @@ public class TicTacToeShould {
         // act
         ticTacToe.mark(Position.TopCenter); // x
         ticTacToe.mark(Position.TopLeft); // o
-        ticTacToe.mark(Position.MiddleLeft); // x
+        ticTacToe.mark(Position.BottomRight); // x
         ticTacToe.mark(Position.MiddleCenter); // o
-        ticTacToe.mark(Position.BottomLeft); // x
+        ticTacToe.mark(Position.BottomCenter); // x
         ticTacToe.mark(Position.BottomRight); // o
 
         var actualWinner = ticTacToe.getWinner();
@@ -85,6 +85,28 @@ public class TicTacToeShould {
         assertEquals(expectedWinner, actualWinner);
     }
 
+
+    @DisplayName("""
+            make win 'o' on right diagonal
+            """)
+    @Test
+    public void oWinsRightDiagonal() {
+        // arrange
+        var expectedWinner = Player.O;
+
+        // act
+        ticTacToe.mark(Position.TopCenter); // x
+        ticTacToe.mark(Position.TopRight); // o
+        ticTacToe.mark(Position.MiddleLeft); // x
+        ticTacToe.mark(Position.MiddleCenter); // o
+        ticTacToe.mark(Position.BottomCenter); // x
+        ticTacToe.mark(Position.BottomLeft); // o
+
+        var actualWinner = ticTacToe.getWinner();
+
+        // assert
+        assertEquals(expectedWinner, actualWinner);
+    }
 
 
 }

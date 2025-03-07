@@ -39,6 +39,13 @@ public class TicTacToe {
         ) {
             return grid[Position.TopLeft.ordinal()];
         }
+        if (
+                grid[Position.TopRight.ordinal()] == grid[Position.MiddleCenter.ordinal()] &&
+                grid[Position.MiddleCenter.ordinal()] == grid[Position.BottomLeft.ordinal()] &&
+                grid[Position.TopRight.ordinal()] != Player.None
+        ) {
+            return grid[Position.TopRight.ordinal()];
+        }
         return Player.None;
     }
 }
