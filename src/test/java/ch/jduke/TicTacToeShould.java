@@ -1,11 +1,9 @@
 package ch.jduke;
 
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TicTacToeShould {
 
@@ -35,6 +33,24 @@ public class TicTacToeShould {
         var ticTacToe = new TicTacToe();
 
         // act
+        ticTacToe.mark();
+        var actualPlayer = ticTacToe.getPlayer();
+
+        // assert
+        assertEquals(expectedPlayer, actualPlayer);
+    }
+
+    @Test
+    @DisplayName("""
+            check players alternate
+            """)
+    public void checkPlayersAlternate() {
+        // arrange
+        var expectedPlayer = "x";
+        var ticTacToe = new TicTacToe();
+
+        // act
+        ticTacToe.mark();
         ticTacToe.mark();
         var actualPlayer = ticTacToe.getPlayer();
 
