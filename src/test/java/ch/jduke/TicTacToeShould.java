@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class TicTacToeShould {
 
     @Test
@@ -20,7 +22,7 @@ public class TicTacToeShould {
         var actualPlayer = ticTacToe.getPlayer();
 
         // assert
-        Assertions.assertEquals(actualPlayer, expectedPlayer);
+        assertEquals(expectedPlayer, actualPlayer);
     }
 
     @Test
@@ -37,6 +39,6 @@ public class TicTacToeShould {
         var actualPlayer = ticTacToe.getPlayer();
 
         // assert
-        Assertions.assertEquals(actualPlayer, expectedPlayer);
+        assertEquals(expectedPlayer, actualPlayer);
     }
 }
