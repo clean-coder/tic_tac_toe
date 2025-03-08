@@ -5,10 +5,11 @@ import java.util.List;
 public class WinningPositions {
     private WinningPosition leftDiagonal = new WinningPosition(Position.TopLeft, Position.MiddleCenter, Position.BottomRight);
     private WinningPosition rightDiagonal = new WinningPosition(Position.TopRight, Position.MiddleCenter, Position.BottomLeft);
-    private WinningPosition topRow = new WinningPosition(Position.TopLeft, Position.TopCenter, Position.TopRight);
+    private WinningPosition topRow =    new WinningPosition(Position.TopLeft,    Position.TopCenter,    Position.TopRight);
+    private WinningPosition middleRow = new WinningPosition(Position.MiddleLeft, Position.MiddleCenter, Position.MiddleRight);
 
     private List<WinningPosition> allWinningPositions = List.of(
-            leftDiagonal, rightDiagonal, topRow
+            leftDiagonal, rightDiagonal, topRow, middleRow
     );
 
     public WinningState checkWin(Player[] grid) {
