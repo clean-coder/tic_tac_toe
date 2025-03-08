@@ -152,4 +152,26 @@ public class TicTacToeShould {
         assertEquals(expectedWinner, actualWinner);
     }
 
+    @DisplayName("""
+            make win 'o' on bottom row
+            """)
+    @Test
+    public void oWinsBottomRow() {
+        // arrange
+        var expectedWinner = Player.O;
+
+        // act
+        ticTacToe.mark(Position.TopCenter); // x
+        ticTacToe.mark(Position.BottomLeft); // o
+        ticTacToe.mark(Position.MiddleCenter); // x
+        ticTacToe.mark(Position.BottomCenter); // o
+        ticTacToe.mark(Position.MiddleRight); // x
+        ticTacToe.mark(Position.BottomRight); // o
+
+        var actualWinner = ticTacToe.getWinner();
+
+        // assert
+        assertEquals(expectedWinner, actualWinner);
+    }
+
 }
