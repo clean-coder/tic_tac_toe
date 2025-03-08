@@ -9,6 +9,7 @@ public class TicTacToe {
     }
 
     public void mark(Position position) {
+        grid.assertPositionIsNotMarked(position);
         grid.mark(position, actualPlayer);
         changePlayer();
     }

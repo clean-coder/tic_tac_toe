@@ -21,4 +21,10 @@ public class Grid {
     private Player[] makeCopyOfGrid() {
         return grid.clone();
     }
+
+    public void assertPositionIsNotMarked(Position position) {
+        if (grid[position.ordinal()] != Player.None) {
+            throw new IllegalArgumentException("Position " + position + " is already marked");
+        }
+    }
 }

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TicTacToeShould {
 
@@ -199,4 +200,14 @@ public class TicTacToeShould {
         assertEquals(expectedWinner, actualWinner);
     }
 
+    @DisplayName("""
+            throws exception when position in grid is already marked
+            """)
+    @Test
+    public void throwsExceptionWhenPositionInGridIsAlreadyMarked() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            ticTacToe.mark(Position.TopCenter); // x
+            ticTacToe.mark(Position.TopCenter); // o
+        });
+    }
 }
