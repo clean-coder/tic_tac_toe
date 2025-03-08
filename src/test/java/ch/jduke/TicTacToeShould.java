@@ -174,4 +174,29 @@ public class TicTacToeShould {
         assertEquals(expectedWinner, actualWinner);
     }
 
+    @DisplayName("""
+            make win 'none'
+            """)
+    @Test
+    public void noneWins() {
+        // arrange
+        var expectedWinner = Player.None;
+
+        // act
+        ticTacToe.mark(Position.TopCenter); // x
+        ticTacToe.mark(Position.TopLeft); // o
+        ticTacToe.mark(Position.TopRight); // x
+        ticTacToe.mark(Position.MiddleRight); // o
+        ticTacToe.mark(Position.MiddleLeft); // x
+        ticTacToe.mark(Position.BottomLeft); // o
+        ticTacToe.mark(Position.MiddleCenter); // x
+        ticTacToe.mark(Position.BottomCenter); // o
+        ticTacToe.mark(Position.BottomRight); // x
+
+        var actualWinner = ticTacToe.getWinner();
+
+        // assert
+        assertEquals(expectedWinner, actualWinner);
+    }
+
 }
